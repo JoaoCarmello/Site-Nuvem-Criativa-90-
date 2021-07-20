@@ -1,0 +1,94 @@
+﻿@model IEnumerable<siteNuvemCriativa90.Models.Endereco>
+
+@{
+    ViewData["Title"] = "Relatório de Endereços";
+    Layout = null;
+}
+
+<html lang="pt-br">
+<head>
+    <title>Nuvem Criativa 90  &mdash; Relatório de Endereços</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="~/css/aos.css">
+    <link rel="stylesheet" href="~/css/cad.own.view.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="center">
+        <div class="main col-12 col-xx-2">
+            <img class="imglogo1" src="../Assets/NuvemLogo.png">
+        </div>
+        <div class="mainInformation">
+            <h4>Relatório de endereços</h4>
+            <h7>Data do documento: @DateTime.Now.ToString("dd/MM/yyyy")
+        </div>
+    </div>
+
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Logradouro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.UF)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Logradouro)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/aos.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/slider.js"></script>
+</body>
+</html>
+
+

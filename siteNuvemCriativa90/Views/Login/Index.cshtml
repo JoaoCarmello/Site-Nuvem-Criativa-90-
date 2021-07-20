@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nuvem Criativa 90 – Login</title>
+    <link rel="stylesheet" href="~/css/owl.site-log.css" />
+</head>
+<body onselectstart='return false'>
+    <section class="form-section">
+
+        <div class="form-wrapper">
+            <form action="">
+                <div class="col-6 col-xl-2">
+                    <img src="../Assets/NuvemLogo.png" class="img-logo" />
+                </div>
+                <div class="input-block">
+                    <input type="email" class="email" id="login-email" placeholder="E-mail" required />
+                </div>
+                <div class="input-block">
+                    <input type="password" class="senha" id="login-password" placeholder="Senha" required />
+                </div>
+                <div class="input-block">
+                    <a href="/#contato">Esqueci minha senha!</a>
+                </div>
+                <div class="input-block">
+                    <p>Ainda não é nosso cliente?! <a href="/#contato">Clique aqui</a></p>
+                </div>
+                <button type="submit" asp-controller="CentralAdmin" asp-action="Index" class="btn-login">Login</button>
+            </form>
+        </div>
+
+    </section>
+    <script src="~/js/script.js"></script>
+</body>
+</html>

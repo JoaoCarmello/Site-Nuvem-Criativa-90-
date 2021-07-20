@@ -1,0 +1,88 @@
+﻿@model siteNuvemCriativa90.Models.Endereco
+
+@{
+    ViewData["Title"] = "Cadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="~/css/aos.css">
+    <link rel="stylesheet" href="~/css/cad.own.view.css">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <h4>Cadastrar - Endereços</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Cadastrar">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Cidade" class="control-label"></label>
+                    <input asp-for="Cidade" class="form-control" required />
+                    <span asp-validation-for="Cidade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UF" class="control-label inputRamo" for="UF">UF</label>
+                    <select asp-for="UF" class="custom-select" required>
+                        <option value="" selected>Escolha</option>
+                        <option asp-for="UF" value="AC">AC</option>
+                        <option asp-for="UF" value="AL">AL</option>
+                        <option asp-for="UF" value="AP">AP</option>
+                        <option asp-for="UF" value="AM">AM</option>
+                        <option asp-for="UF" value="BA">BA</option>
+                        <option asp-for="UF" value="CE">CE</option>
+                        <option asp-for="UF" value="ES">ES</option>
+                        <option asp-for="UF" value="GO">GO</option>
+                        <option asp-for="UF" value="MA">MA</option>
+                        <option asp-for="UF" value="MT">MT</option>
+                        <option asp-for="UF" value="MS">MS</option>
+                        <option asp-for="UF" value="MG">MG</option>
+                        <option asp-for="UF" value="PA">PA</option>
+                        <option asp-for="UF" value="PB">PB</option>
+                        <option asp-for="UF" value="PR">PR</option>
+                        <option asp-for="UF" value="RN">RN</option>
+                        <option asp-for="UF" value="RO">RO</option>
+                        <option asp-for="UF" value="RR">RR</option>
+                        <option asp-for="UF" value="SC">SC</option>
+                        <option asp-for="UF" value="SP">SP</option>
+                        <option asp-for="UF" value="SE">SE</option>
+                        <option asp-for="UF" value="TO">TO</option>
+                        <option asp-for="UF" value="DF">DF</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Logradouro" class="control-label"></label>
+                    <input asp-for="Logradouro" class="form-control" required />
+                    <span asp-validation-for="Logradouro" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Numero" class="control-label"></label>
+                    <input asp-for="Numero" class="form-control" required />
+                    <span asp-validation-for="Numero" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="Apagado" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Cadastrar" class="btn btn-secondary" />
+                </div>
+            </form>
+                <button asp-action="Index" value="Voltar" class="btn btn-secondary" style="margin-left:5px;">Voltar</button>
+        </div>
+    </div>
+</body>
+</html>
+

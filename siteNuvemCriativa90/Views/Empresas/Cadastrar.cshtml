@@ -1,0 +1,108 @@
+﻿@model siteNuvemCriativa90.Models.Empresa
+
+@{
+    ViewData["Title"] = "Cadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="~/css/aos.css">
+    <link rel="stylesheet" href="~/css/cad.own.view.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
+
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                $('#cnpj').mask('00.000.000/0000-00');
+                $('#tel').mask('(00) 00000-0000');
+            });
+        });</script>
+</head>
+<body>
+    <h4>Cadastrar - Empresas</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Cadastrar">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CNPJ" class="control-label"></label>
+                    <input asp-for="CNPJ" class="form-control" id="cnpj" required />
+                    <span asp-validation-for="CNPJ" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RazaoSocial" class="control-label"></label>
+                    <input asp-for="RazaoSocial" class="form-control" required />
+                    <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NomeFantasia" class="control-label"></label>
+                    <input asp-for="NomeFantasia" class="form-control" required />
+                    <span  asp-validation-for="NomeFantasia" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input type="email" asp-for="Email" class="form-control" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefone" class="control-label"></label>
+                    <input type="tel" asp-for="Telefone" class="form-control" id="tel" required />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Necessidade" class="control-label">Necessidade</label>
+                    <textarea asp-for="Necessidade" required cols="30" rows="5" class="form-control"></textarea>
+                    <span asp-validation-for="Necessidade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ramo" class="control-label inputRamo" for="ramo">Ramo</label>
+                    <select asp-for="Ramo" class="custom-select" id="txtRamo" required>
+                        <option value="" selected>Escolha</option>
+                        <option asp-for="Ramo" value="educacao">Educação</option>
+                        <option asp-for="Ramo" value="consultoria">Consultoria</option>
+                        <option asp-for="Ramo" value="juridico">Jurídico</option>
+                        <option asp-for="Ramo" value="rh">Recursos Humanos</option>
+                        <option asp-for="Ramo" value="saude">Saúde</option>
+                        <option asp-for="Ramo" value="tecnologia">Tecnologia</option>
+                        <option asp-for="Ramo" value="turismo">Turismo</option>
+                        <option asp-for="Ramo" value="lazer">Lazer</option>
+                        <option asp-for="Ramo" value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IDEndereco" class="control-label"></label>
+                    <select asp-for="IDEndereco" class="form-control" asp-items="ViewBag.IDEndereco" required></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IDGrupoUsuario" class="control-label"></label>
+                    <select asp-for="IDGrupoUsuario" class="form-control" asp-items="ViewBag.IDGrupoUsuario" required></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Cadastrar" class="btn btn-secondary" />
+                </div>
+            </form>
+            <button asp-action="Index" value="Voltar" class="btn btn-secondary" style="margin-left:5px;">Voltar</button>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>
